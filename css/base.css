@@ -414,7 +414,8 @@ ul, ol {
   padding: var(--space-2) 0;
 }
 
-.nav__mobile a:hover {
+.nav__mobile a:hover,
+.nav__mobile a.active {
   color: var(--c-text);
 }
 
