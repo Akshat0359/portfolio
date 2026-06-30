@@ -312,22 +312,23 @@ ul, ol {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: var(--r-md);
-  background: linear-gradient(135deg, rgba(124,92,252,0.15), rgba(79,158,255,0.15));
-  border: 1px solid rgba(124,92,252,0.3);
-  box-shadow: inset 0 0 12px rgba(124,92,252,0.25);
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, var(--c-purple-glow), var(--c-accent-glow));
+  border: 1px solid var(--c-accent-glow);
+  box-shadow: 0 0 8px var(--c-accent-glow);
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 1.1rem;
-  color: #fff;
-  transition: all var(--t-base);
+  font-size: var(--fs-lg);
+  color: var(--c-text);
+  transition: all var(--t-spring);
   will-change: transform, box-shadow;
 }
 
 .nav__logo:hover .nav__logo-mark {
   transform: scale(1.05);
-  box-shadow: inset 0 0 16px rgba(124,92,252,0.4), 0 0 16px rgba(124,92,252,0.2);
-  border-color: rgba(124,92,252,0.5);
+  box-shadow: 0 0 16px var(--c-accent-glow);
+  border-color: rgba(79,158,255,0.4);
+  color: #fff;
 }
 
 .nav__links {
