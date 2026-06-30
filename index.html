@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshat — AI/ML Engineer</title>
+  <meta name="description" content="Akshat — Software Engineer building production backends, distributed pipelines, and agentic AI systems. RVCE '26, ex-L&T Technology Services." />
+  <meta name="keywords" content="AI Engineer, ML Engineer, Backend Engineer, Platform Engineer, SRE, DevOps, GenAI, Python, Bengaluru" />
+  <meta property="og:title" content="Akshat — Software Engineer" />
+  <meta property="og:description" content="Building scalable backends, reliable data pipelines, and production-grade AI systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Akshat home">
+        <span class="nav__logo-mark">A</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="projects.html" class="nav__link">Work</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="resume.html" class="nav__link">Resume</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="projects.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg-glow" aria-hidden="true"></div>
+      <div class="hero__mesh" aria-hidden="true">
+        <div class="hero__mesh-blob hero__mesh-blob--1"></div>
+        <div class="hero__mesh-blob hero__mesh-blob--2"></div>
+        <div class="hero__mesh-blob hero__mesh-blob--3"></div>
+      </div>
+      <div class="hero__grid-lines" aria-hidden="true"></div>
+      <div class="hero__noise" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__content reveal-up">
+          <div class="hero__tag">
+            <span class="hero__tag-dot"></span>
+            Available for opportunities · Bengaluru, India
+          </div>
+          <h1 class="hero__name" id="hero-heading">Building systems<br><span class="hero__name-dim">that hold up in prod.</span></h1>
+          <div style="display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center;margin-top:-0.25rem">
+            <span class="bento__tag bento__tag--ai">Agentic AI</span>
+            <span class="bento__tag bento__tag--ml">ML / RAG</span>
+            <span class="bento__tag bento__tag--backend">Backend Eng</span>
+          </div>
+          <p class="hero__role" style="margin-top:0.25rem">Akshat <span class="hero__role-sep">·</span> RVCE '26 <span class="hero__role-sep">·</span> ex-L&T Technology Services</p>
+          <p class="hero__sub">
+            I build scalable backends, reliable data pipelines, and agentic AI systems. Focused on infrastructure automation and production-grade engineering.
+          </p>
+          <div class="hero__ctas">
+            <a href="projects.html" class="btn btn--primary" id="hero-cta-projects">View My Work</a>
+            <a href="resume.html" class="btn btn--ghost" id="hero-cta-resume">View Resume</a>
+            <a href="assets/Resume.pdf" download="Akshat_Resume.pdf" class="btn btn--outline" id="hero-cta-download">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF
+            </a>
+          </div>
+          <div class="hero__social-links">
+            <a href="https://github.com/Akshat0359" class="hero__social-link" target="_blank" rel="noopener" aria-label="GitHub profile" id="hero-github">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/akshat-prabhakar/" class="hero__social-link" target="_blank" rel="noopener" aria-label="LinkedIn profile" id="hero-linkedin">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:akshat.prabhakar5903@gmail.com" class="hero__social-link" id="hero-email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+        <div class="hero__portrait reveal-right">
+          <div class="hero__portrait-ring" aria-hidden="true"></div>
+          <div class="hero__portrait-glow" aria-hidden="true"></div>
+          <div class="hero__portrait-float">
+            <div class="hero__portrait-frame" id="portrait-tilt">
+              <img src="assets/portrait.png" alt="Akshat — AI/ML Engineer" class="hero__portrait-img" loading="eager" />
+            </div>
+          </div>
+          <div class="hero__portrait-badge" aria-label="Open to opportunities">
+            <span class="hero__portrait-badge-dot" aria-hidden="true"></span>
+            Open to Opportunities
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- CREDIBILITY STRIP -->
+    <section class="credibility reveal-up" aria-label="Credentials and background">
+      <div class="container">
+        <div class="credibility__inner">
+          <div class="credibility__item">
+            <span class="credibility__label">Education</span>
+            <span class="credibility__value">RVCE, Bengaluru · CSE '26</span>
+          </div>
+          <div class="credibility__divider" aria-hidden="true"></div>
+          <div class="credibility__item">
+            <span class="credibility__label">Experience</span>
+            <span class="credibility__value">L&T Technology Services · AI/ML Intern</span>
+          </div>
+          <div class="credibility__divider" aria-hidden="true"></div>
+          <div class="credibility__item">
+            <span class="credibility__label">Focus</span>
+            <span class="credibility__value">Multi-Agent AI · LLMs · Distributed Systems</span>
+          </div>
+          <div class="credibility__divider" aria-hidden="true"></div>
+          <div class="credibility__item">
+            <span class="credibility__label">Certifications</span>
+            <span class="credibility__value">Agentic AI · Google & Kaggle</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS BENTO -->
+    <section class="featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">Selected Work</span>
+          <h2 id="featured-heading">Projects That<br>Ship to Production</h2>
+          <a href="projects.html" class="section-link" id="home-view-all">View All Projects →</a>
+        </div>
+        <div class="bento" role="list">
+          <!-- Card 1 — Flagship -->
+          <article class="bento__card bento__card--featured tilt-card" role="listitem" data-href="projects.html#ai-research-analyst">
+            <div class="bento__card-glow" aria-hidden="true"></div>
+            <div class="bento__card-inner">
+              <div class="bento__card-top">
+                <div class="bento__tag bento__tag--ai">Multi-Agent AI</div>
+                <div class="bento__stack">Python · LangGraph · FastAPI · MCP · React</div>
+              </div>
+              <h3 class="bento__title">AI Research Analyst<br><span>MCP-A2A</span></h3>
+              <p class="bento__desc">Multi-agent research system with MCP memory, A2A orchestration, and a React UI. Agents plan, retrieve, and synthesize research across multiple domains autonomously.</p>
+              <div class="bento__card-footer">
+                <a href="projects.html#ai-research-analyst" class="bento__link" id="card-ai-research">Case Study →</a>
+                <a href="https://github.com/Akshat0359/ai-research-analyst-mcp-a2a" class="bento__link bento__link--dim" target="_blank" rel="noopener" id="card-ai-research-github">GitHub ↗</a>
+              </div>
+            </div>
+            <div class="bento__card-visual bento__card-visual--ai" aria-hidden="true">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" style="width:100%;height:100%;color:var(--c-accent);opacity:0.6;margin-left:50%;margin-top:10%">
+                <circle cx="50" cy="50" r="12"/><circle cx="20" cy="20" r="8"/><circle cx="80" cy="20" r="8"/><circle cx="20" cy="80" r="8"/><circle cx="80" cy="80" r="8"/>
+                <line x1="26" y1="26" x2="41" y2="41"/><line x1="74" y1="26" x2="59" y2="41"/><line x1="26" y1="74" x2="41" y2="59"/><line x1="74" y1="74" x2="59" y2="59"/>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="bento__card tilt-card" role="listitem" data-href="projects.html#lending-platform">
+            <div class="bento__card-inner">
+              <div class="bento__card-top">
+                <div class="bento__tag bento__tag--backend">C# · .NET · Backend</div>
+                <div class="bento__stack">C# · ASP.NET · SQL · Docker</div>
+              </div>
+              <h3 class="bento__title">AI-Based Digital<br>Lending Platform</h3>
+              <p class="bento__desc">Enterprise lending platform featuring an automated application pipeline with discrete risk and eligibility evaluation stages. Built with a C# API-first architecture.</p>
+              <div class="bento__card-footer">
+                <a href="projects.html#lending-platform" class="bento__link" id="card-lending">Case Study →</a>
+                <a href="https://github.com/Akshat0359/ai-based-digital-lending-platform-" class="bento__link bento__link--dim" target="_blank" rel="noopener" id="card-lending-github">GitHub ↗</a>
+              </div>
+            </div>
+            <div class="bento__card-visual bento__card-visual--lend" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:100%;height:100%;color:var(--c-accent);opacity:0.2;margin-left:50%;margin-top:20%">
+                <rect x="2" y="9" width="4" height="6" rx="1"/><rect x="10" y="9" width="4" height="6" rx="1"/><rect x="18" y="5" width="4" height="6" rx="1"/><rect x="18" y="13" width="4" height="6" rx="1"/>
+                <line x1="6" y1="12" x2="10" y2="12"/><polyline points="14 12 16 12 16 8 18 8"/><polyline points="14 12 16 12 16 16 18 16"/>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="bento__card tilt-card" role="listitem" data-href="projects.html#anomaly-detector">
+            <div class="bento__card-inner">
+              <div class="bento__card-top">
+                <div class="bento__tag bento__tag--ml">ML · Security</div>
+                <div class="bento__stack">Python · Zeek · Scikit-learn · Streamlit</div>
+              </div>
+              <h3 class="bento__title">Network Anomaly<br>Detector</h3>
+              <p class="bento__desc">Real-time network anomaly detection using Zeek for traffic analysis and ML classification models with an interactive Streamlit dashboard.</p>
+              <div class="bento__card-footer">
+                <a href="projects.html#anomaly-detector" class="bento__link" id="card-anomaly">Case Study →</a>
+                <a href="https://github.com/Akshat0359/anomaly-detector" class="bento__link bento__link--dim" target="_blank" rel="noopener" id="card-anomaly-github">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="bento__card tilt-card" role="listitem" data-href="projects.html#devops-platform">
+            <div class="bento__card-inner">
+              <div class="bento__card-top">
+                <div class="bento__tag bento__tag--devops">DevOps · Cloud</div>
+                <div class="bento__stack">Python · Docker · CI/CD · Shell</div>
+              </div>
+              <h3 class="bento__title">Cloud-Native DevOps<br>Automation Platform</h3>
+              <p class="bento__desc">Automated cloud-native deployment pipeline integrating build, test, and release stages. Designed for idempotent deployments.</p>
+              <div class="bento__card-footer">
+                <a href="projects.html#devops-platform" class="bento__link" id="card-devops">Case Study →</a>
+                <a href="https://github.com/Akshat0359/cloud-native-devops-automation-platform" class="bento__link bento__link--dim" target="_blank" rel="noopener" id="card-devops-github">GitHub ↗</a>
+              </div>
+            </div>
+            <div class="bento__card-visual bento__card-visual--dev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:100%;height:100%;color:var(--c-accent);opacity:0.2;margin-left:50%;margin-top:20%">
+                <rect x="2" y="8" width="5" height="8" rx="1"/><rect x="10" y="8" width="5" height="8" rx="1"/><polygon points="18 8 18 16 23 12" stroke-linejoin="round"/><line x1="7" y1="12" x2="10" y2="12"/><line x1="15" y1="12" x2="18" y2="12"/>
+              </svg>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS STRIP (Step 5 — expandable category cards) -->
+    <section class="skills-strip reveal-up" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 class="sr-only" id="skills-heading">Technical Skills</h2>
+        <div class="skills-strip__inner">
+
+          <details class="skill-cat" open>
+            <summary class="skill-cat__header">
+              <span class="skill-cat__icon">💻</span>
+              <span class="skill-cat__name">Languages</span>
+              <svg class="skill-cat__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+            </summary>
+            <div class="skill-cat__body">
+              <div class="skill-cat__body-inner">
+                <div class="skill-cat__tags">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">C#</span>
+                  <span class="skill-tag">C++</span>
+                  <span class="skill-tag">SQL</span>
+                  <span class="skill-tag">Bash</span>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="skill-cat" open>
+            <summary class="skill-cat__header">
+              <span class="skill-cat__icon">🤖</span>
+              <span class="skill-cat__name">AI / ML</span>
+              <svg class="skill-cat__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+            </summary>
+            <div class="skill-cat__body">
+              <div class="skill-cat__body-inner">
+                <div class="skill-cat__tags">
+                  <span class="skill-tag skill-tag--highlight">LangGraph</span>
+                  <span class="skill-tag skill-tag--highlight">MCP</span>
+                  <span class="skill-tag skill-tag--highlight">RAG</span>
+                  <span class="skill-tag skill-tag--highlight">Gemini AI</span>
+                  <span class="skill-tag">Ray</span>
+                  <span class="skill-tag">Scikit-learn</span>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <details class="skill-cat" open>
+            <summary class="skill-cat__header">
+              <span class="skill-cat__icon">⚙️</span>
+              <span class="skill-cat__name">Backend / Infra</span>
+              <svg class="skill-cat__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+            </summary>
+            <div class="skill-cat__body">
+              <div class="skill-cat__body-inner">
+                <div class="skill-cat__tags">
+                  <span class="skill-tag">FastAPI</span>
+                  <span class="skill-tag">ASP.NET</span>
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">PostgreSQL</span>
+                  <span class="skill-tag">Redis</span>
+                  <span class="skill-tag">GitHub Actions</span>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GITHUB ACTIVITY STRIP -->
+    <section class="github-strip reveal-up" aria-labelledby="github-heading">
+      <div class="container">
+        <div class="github-strip__inner">
+          <div class="github-strip__left">
+            <h2 id="github-heading" class="github-strip__title">Building in Public</h2>
+            <p class="github-strip__sub">Active on GitHub — agentic AI, ML tooling, and backend systems.</p>
+            <a href="https://github.com/Akshat0359" target="_blank" rel="noopener" class="btn btn--outline btn--sm" id="github-strip-link">View GitHub Profile ↗</a>
+          </div>
+          <div class="github-strip__right">
+            <div class="github-repo-card" id="gr1">
+              <div class="github-repo-card__icon" aria-hidden="true">⬡</div>
+              <div>
+                <div class="github-repo-card__name">ai-research-analyst-mcp-a2a</div>
+                <div class="github-repo-card__desc">Multi-agent AI research system with MCP memory & A2A orchestration</div>
+                <div class="github-repo-card__lang"><span class="lang-dot lang-dot--python"></span>Python</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section reveal-up" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-section__inner">
+          <h2 id="cta-heading">Let's work on<br>something real.</h2>
+          <p>Open to full-time roles in AI/ML Engineering, Backend Engineering, or Platform Engineering immediately.</p>
+          <div class="cta-section__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg" id="cta-contact">Get in Touch</a>
+            <a href="projects.html" class="btn btn--ghost btn--lg" id="cta-projects">See All Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <span class="footer__name">Akshat</span>
+          <span class="footer__tagline">AI/ML Engineer · RVCE '26 · Bengaluru</span>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com/Akshat0359" target="_blank" rel="noopener" id="footer-github">GitHub</a>
+          <a href="https://www.linkedin.com/in/akshat-prabhakar/" target="_blank" rel="noopener" id="footer-linkedin">LinkedIn</a>
+          <a href="mailto:akshat.prabhakar5903@gmail.com" id="footer-email">Email</a>
+        </div>
+        <div class="footer__copy">© 2026 Akshat</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

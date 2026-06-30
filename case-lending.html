@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Based Digital Lending Platform — Case Study</title>
+  <meta name="description" content="Case study: Enterprise lending platform with AI-assisted credit decisioning built in C#/.NET." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" /><link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-mark">A</span></a>
+      <ul class="nav__links" role="list">
+        <li><a href="projects.html" class="nav__link">Work</a></li><li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="resume.html" class="nav__link">Resume</a></li><li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <ul role="list"><li><a href="projects.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+  </nav>
+
+  <main class="case-study">
+    <div class="case-study__hero">
+      <div class="container">
+        <a href="projects.html" class="case-study__back">← All Projects</a>
+        <div class="case-study__header reveal-up">
+          <div>
+            <span class="bento__tag bento__tag--backend" style="margin-bottom:1rem;display:inline-flex">C# · .NET · Enterprise</span>
+            <h1 class="case-study__title">AI-Based Digital<br>Lending Platform</h1>
+          </div>
+          <div class="case-study__meta">
+            <div class="case-study__meta-item"><span class="case-study__meta-label">Role</span><span class="case-study__meta-value">Solo Engineer (Major Project)</span></div>
+            <div class="case-study__meta-item"><span class="case-study__meta-label">Year</span><span class="case-study__meta-value">2026</span></div>
+            <div class="case-study__meta-item"><span class="case-study__meta-label">Stack</span><span class="case-study__meta-value">C# · ASP.NET · SQL Server · Docker</span></div>
+          </div>
+        </div>
+        <div class="case-study__visual visual-lend reveal-up">
+          <div class="visual-grid-overlay"></div>
+          <div style="text-align:center;z-index:1;position:relative"><div style="font-size:5rem;margin-bottom:1rem">🏦</div>
+          <div style="font-family:var(--font-mono);font-size:var(--fs-sm);color:rgba(255,255,255,0.5)">VelocityCredit.sln · src/ · tests/ · docs/ · docker/</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="case-study__body">
+        <aside class="case-study__toc" aria-label="Table of contents">
+          <div class="case-study__toc-title">On this page</div>
+          <ul class="case-study__toc-list" role="list">
+            <li><a href="#context" class="case-study__toc-link">Context</a></li>
+            <li><a href="#problem" class="case-study__toc-link">Problem</a></li>
+            <li><a href="#architecture" class="case-study__toc-link">Architecture</a></li>
+            <li><a href="#decisions" class="case-study__toc-link">Key Decisions</a></li>
+            <li><a href="#stack" class="case-study__toc-link">Stack</a></li>
+            <li><a href="#results" class="case-study__toc-link">Results</a></li>
+            <li><a href="#next" class="case-study__toc-link">Next Steps</a></li>
+          </ul>
+        </aside>
+
+        <div class="case-study__content">
+          <section class="case-study__section reveal-up" id="context">
+            <span class="case-study__section-label">01 — Context</span>
+            <h2>Enterprise Lending at Scale</h2>
+            <p>Digital lending platforms sit at the intersection of financial regulation, workflow orchestration, and real-time decisioning. This project (VelocityCredit) was built as a full-stack major project to simulate a production-grade enterprise lending system — API-first, with clear domain boundaries and a clean architecture.</p>
+            <p>The platform was designed to handle the core lending lifecycle: application intake, AI-assisted credit evaluation, loan workflow management, disbursement tracking, and analytics — with a reference C#/.NET implementation.</p>
+          </section>
+
+          <section class="case-study__section reveal-up" id="problem">
+            <span class="case-study__section-label">02 — Problem</span>
+            <h2>What Enterprise Lending Actually Requires</h2>
+            <ul>
+              <li>Credit decisioning must be rule-based, auditable, and explainable — not a black box</li>
+              <li>Lending workflows have complex state machines: applied → verified → approved → disbursed → repaying → closed</li>
+              <li>APIs must be versioned and contract-stable — downstream integrations break on schema changes</li>
+              <li>The system must handle concurrent loan applications without race conditions on shared credit limits</li>
+            </ul>
+          </section>
+
+          <section class="case-study__section reveal-up" id="architecture">
+            <span class="case-study__section-label">03 — Architecture</span>
+            <h2>System Structure</h2>
+            <div class="arch-diagram">VelocityCredit.sln (ASP.NET Solution)
+│
+├── src/
+│   ├── VelocityCredit.API/         ← Controllers, Middleware, DI
+│   ├── VelocityCredit.Core/        ← Domain models, interfaces
+│   ├── VelocityCredit.Application/ ← Business logic, CQRS handlers
+│   ├── VelocityCredit.Infrastructure/ ← EF Core, SQL Server, repos
+│   └── VelocityCredit.AI/          ← Credit scoring, rule engine
+│
+├── tests/
+│   ├── Unit/                       ← Domain logic tests
+│   └── Integration/                ← API + DB integration tests
+│
+└── docker/                         ← Compose for local dev stack</div>
+            <p>The solution follows Clean Architecture — the domain layer has zero external dependencies. Business logic lives in Application, and the API layer is a thin controller surface over application services.</p>
+          </section>
+
+          <section class="case-study__section reveal-up" id="decisions">
+            <span class="case-study__section-label">04 — Key Decisions</span>
+            <h2>Design Choices</h2>
+            <ul>
+              <li><strong>C#/.NET for the core:</strong> The .NET ecosystem is the industry standard for enterprise financial applications — strong typing, mature ORM (EF Core), and excellent testing tooling</li>
+              <li><strong>CQRS pattern:</strong> Commands (mutations) and queries are separated, making the credit decisioning logic independently testable and auditable</li>
+              <li><strong>Rule-based credit scoring:</strong> Implemented as a configurable rule engine rather than an ML model — easier to audit, explain to regulators, and update without retraining</li>
+              <li><strong>API-first design:</strong> All functionality exposed via RESTful endpoints with OpenAPI documentation — documented in API_REFERENCE.md (15KB)</li>
+              <li><strong>Docker Compose for local dev:</strong> Ensures the full SQL Server + API stack runs identically on any machine</li>
+            </ul>
+          </section>
+
+          <section class="case-study__section reveal-up" id="stack">
+            <span class="case-study__section-label">05 — Stack</span>
+            <h2>Technologies Used</h2>
+            <div class="tech-stack-grid">
+              <span class="skill-tag">C# (.NET)</span>
+              <span class="skill-tag">ASP.NET Core</span>
+              <span class="skill-tag">Entity Framework Core</span>
+              <span class="skill-tag">SQL Server</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CQRS</span>
+              <span class="skill-tag">Clean Architecture</span>
+              <span class="skill-tag">OpenAPI / Swagger</span>
+              <span class="skill-tag">xUnit (testing)</span>
+            </div>
+          </section>
+
+          <section class="case-study__section reveal-up" id="results">
+            <span class="case-study__section-label">06 — Results</span>
+            <h2>What Was Built</h2>
+            <ul>
+              <li>Full solution structure with Clean Architecture separation across API, Core, Application, Infrastructure, and AI layers</li>
+              <li>Credit decisioning module with configurable rule-based scoring engine</li>
+              <li>Loan lifecycle state machine covering all standard transitions</li>
+              <li>REST API with OpenAPI documentation, covering loan application, evaluation, and management endpoints</li>
+              <li>Unit and integration test suite with separate test projects</li>
+              <li>Docker Compose setup for reproducible local development</li>
+            </ul>
+          </section>
+
+          <section class="case-study__section reveal-up" id="next">
+            <span class="case-study__section-label">07 — Next Steps</span>
+            <h2>Planned Work</h2>
+            <ul>
+              <li>Add ML-based credit scoring layer alongside rule engine for comparison</li>
+              <li>Implement event sourcing for full audit trail on all loan state transitions</li>
+              <li>Add a borrower-facing portal UI (Blazor or React)</li>
+            </ul>
+            <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+              <a href="https://github.com/Akshat0359/ai-based-digital-lending-platform-" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub ↗</a>
+              <a href="projects.html" class="btn btn--ghost">← Back to Projects</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer__inner">
+    <div class="footer__left"><span class="footer__name">Akshat</span><span class="footer__tagline">AI/ML Engineer · RVCE '26 · Bengaluru</span></div>
+    <div class="footer__links"><a href="https://github.com/Akshat0359" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/akshat-prabhakar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:akshat.prabhakar5903@gmail.com">Email</a></div>
+    <div class="footer__copy">© 2026 Akshat</div>
+  </div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

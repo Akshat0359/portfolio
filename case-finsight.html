@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinSight AI — Case Study</title>
+  <meta name="description" content="Case study: Multi-agent financial intelligence platform analyzing SEC filings with LangGraph and Gemini AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span class="nav__logo-mark">A</span></a>
+      <ul class="nav__links" role="list">
+        <li><a href="projects.html" class="nav__link">Work</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="resume.html" class="nav__link">Resume</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="projects.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case-study">
+    <div class="case-study__hero">
+      <div class="container">
+        <a href="projects.html" class="case-study__back">← All Projects</a>
+        <div class="case-study__header reveal-up">
+          <div>
+            <span class="bento__tag bento__tag--finance" style="margin-bottom:1rem;display:inline-flex">GenAI · Finance</span>
+            <h1 class="case-study__title">FinSight AI</h1>
+          </div>
+          <div class="case-study__meta">
+            <div class="case-study__meta-item">
+              <span class="case-study__meta-label">Role</span>
+              <span class="case-study__meta-value">Solo Engineer</span>
+            </div>
+            <div class="case-study__meta-item">
+              <span class="case-study__meta-label">Year</span>
+              <span class="case-study__meta-value">2026</span>
+            </div>
+            <div class="case-study__meta-item">
+              <span class="case-study__meta-label">Stack</span>
+              <span class="case-study__meta-value">LangGraph · Gemini AI · RAG · Streamlit · FastMCP</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-study__visual visual-fin reveal-up">
+          <div class="visual-grid-overlay"></div>
+          <div style="text-align:center;z-index:1;position:relative">
+            <div style="font-size:5rem;margin-bottom:1rem">📊</div>
+            <div style="font-family:var(--font-mono);font-size:var(--fs-sm);color:rgba(255,255,255,0.5)">agents/ · rag/ · mcp_server/ · dashboard/ · db/ · analysis/</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="case-study__body">
+        <aside class="case-study__toc" aria-label="Table of contents">
+          <div class="case-study__toc-title">On this page</div>
+          <ul class="case-study__toc-list" role="list">
+            <li><a href="#context"      class="case-study__toc-link">Context</a></li>
+            <li><a href="#problem"      class="case-study__toc-link">Problem</a></li>
+            <li><a href="#architecture" class="case-study__toc-link">Architecture</a></li>
+            <li><a href="#decisions"    class="case-study__toc-link">Key Decisions</a></li>
+            <li><a href="#stack"        class="case-study__toc-link">Stack</a></li>
+            <li><a href="#results"      class="case-study__toc-link">Results</a></li>
+            <li><a href="#next"         class="case-study__toc-link">Next Steps</a></li>
+          </ul>
+        </aside>
+
+        <div class="case-study__content">
+          <section class="case-study__section reveal-up" id="context">
+            <span class="case-study__section-label">01 — Context</span>
+            <h2>Financial Analysis Is Broken for Individuals</h2>
+            <p>Analyzing a public company rigorously means reading SEC 10-K and 10-Q filings, tracking market data, monitoring news sentiment, and synthesizing across all of this into a coherent investment or risk view. This takes analysts hours. Retail investors and engineers don't have hours.</p>
+            <p>FinSight AI was built to automate this pipeline end-to-end — from raw SEC data ingestion to a final structured financial intelligence report — using a LangGraph agent system with Gemini AI at its core.</p>
+          </section>
+
+          <section class="case-study__section reveal-up" id="problem">
+            <span class="case-study__section-label">02 — Problem</span>
+            <h2>The Technical Challenges</h2>
+            <ul>
+              <li>SEC EDGAR filings are long-form, semi-structured documents — naive embedding + retrieval fails on them without careful chunking and metadata tagging</li>
+              <li>Market data and news arrive in fundamentally different schemas than SEC documents — multi-source fusion requires a routing layer</li>
+              <li>LLMs hallucinate financial figures without grounding — RAG is necessary but not sufficient; the retrieval must be high-precision</li>
+              <li>Report delivery needs to be consumable by non-engineers — a raw API response is not enough</li>
+            </ul>
+          </section>
+
+          <section class="case-study__section reveal-up" id="architecture">
+            <span class="case-study__section-label">03 — Architecture</span>
+            <h2>Data Flow &amp; Agent Design</h2>
+            <div class="arch-diagram">SEC EDGAR API → Raw Filing Parser → Chunker → Vector DB
+Market Data API → Normalizer        ──┐
+News RSS/API    → Sentiment Parser  ──┤
+                                      ▼
+                              LangGraph Agent System
+                               ├── Data Fusion Agent
+                               ├── RAG Query Agent  (Gemini AI + Vector DB)
+                               ├── Analysis Agent   (ratios, trends, flags)
+                               └── Report Agent     (structured output)
+                                      │
+                               MCP Server (context persistence)
+                                      │
+                               Streamlit Dashboard</div>
+            <p>The MCP server handles cross-session context — so if you analyzed Apple last week, the system can reference that analysis when comparing it to Microsoft today. The Streamlit dashboard presents the final report with charts, tables, and narrative sections.</p>
+          </section>
+
+          <section class="case-study__section reveal-up" id="decisions">
+            <span class="case-study__section-label">04 — Key Decisions</span>
+            <h2>What Drove the Design</h2>
+            <ul>
+              <li><strong>FastMCP for the MCP server:</strong> FastMCP provides a clean Python interface for MCP servers with automatic type coercion, eliminating boilerplate</li>
+              <li><strong>LangGraph checkpointing:</strong> Used LangGraph's SQLite-backed checkpointing to persist agent state between runs — essential for multi-session workflows</li>
+              <li><strong>Gemini AI as the core LLM:</strong> Gemini's long context window is particularly valuable for SEC filings which can exceed 100 pages</li>
+              <li><strong>Streamlit for delivery:</strong> Chosen explicitly for rapid iteration — gets a working interactive dashboard without a full React frontend</li>
+              <li><strong>RAG with metadata filtering:</strong> Each chunk carries metadata (company ticker, fiscal year, section) enabling precise retrieval without scanning the entire corpus</li>
+            </ul>
+          </section>
+
+          <section class="case-study__section reveal-up" id="stack">
+            <span class="case-study__section-label">05 — Stack</span>
+            <h2>Technologies Used</h2>
+            <div class="tech-stack-grid">
+              <span class="skill-tag skill-tag--highlight">Python 3.11</span>
+              <span class="skill-tag skill-tag--highlight">LangGraph</span>
+              <span class="skill-tag skill-tag--highlight">Gemini AI (google-generativeai)</span>
+              <span class="skill-tag skill-tag--highlight">RAG Pipeline</span>
+              <span class="skill-tag">FastMCP</span>
+              <span class="skill-tag">Streamlit</span>
+              <span class="skill-tag">Docker / docker-compose</span>
+              <span class="skill-tag">LangChain Text Splitters</span>
+              <span class="skill-tag">SEC EDGAR API</span>
+            </div>
+          </section>
+
+          <section class="case-study__section reveal-up" id="results">
+            <span class="case-study__section-label">06 — Results</span>
+            <h2>What Was Delivered</h2>
+            <ul>
+              <li>End-to-end pipeline from raw SEC EDGAR filing → structured financial intelligence report</li>
+              <li>Four coordinated LangGraph agents: data fusion, RAG query, analysis, and report generation</li>
+              <li>MCP server for cross-session context memory, enabling comparative analysis across companies and time periods</li>
+              <li>Streamlit dashboard with charts, financial ratio summaries, and narrative report sections</li>
+              <li>Docker Compose setup for reproducible local and cloud deployment</li>
+            </ul>
+          </section>
+
+          <section class="case-study__section reveal-up" id="next">
+            <span class="case-study__section-label">07 — Next Steps</span>
+            <h2>Planned Improvements</h2>
+            <ul>
+              <li>Add earnings call transcript parsing for management sentiment analysis</li>
+              <li>Integrate options market data for implied volatility signals</li>
+              <li>Build a comparison mode — analyze two tickers side-by-side in one session</li>
+              <li>Add an alerting layer — notify when tracked companies file material events</li>
+            </ul>
+            <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+              <a href="https://github.com/Akshat0359/finsight_ai" target="_blank" rel="noopener" class="btn btn--outline" id="cs-fin-github">View on GitHub ↗</a>
+              <a href="projects.html" class="btn btn--ghost">← Back to Projects</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <span class="footer__name">Akshat</span>
+          <span class="footer__tagline">AI/ML Engineer · RVCE '26 · Bengaluru</span>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com/Akshat0359" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/akshat-prabhakar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:akshat.prabhakar5903@gmail.com">Email</a>
+        </div>
+        <div class="footer__copy">© 2026 Akshat</div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

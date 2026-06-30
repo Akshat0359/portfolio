@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Broker Dashboard — Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" /><link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <nav class="nav" id="nav"><div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-mark">A</span></a>
+    <ul class="nav__links" role="list"><li><a href="projects.html" class="nav__link">Work</a></li><li><a href="about.html" class="nav__link">About</a></li><li><a href="resume.html" class="nav__link">Resume</a></li><li><a href="contact.html" class="nav__link">Contact</a></li></ul>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu" aria-hidden="true"><ul role="list"><li><a href="projects.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </nav>
+
+  <main class="case-study">
+    <div class="case-study__hero"><div class="container">
+      <a href="projects.html" class="case-study__back">← All Projects</a>
+      <div class="case-study__header reveal-up">
+        <div>
+          <span class="bento__tag bento__tag--ts" style="margin-bottom:1rem;display:inline-flex">TypeScript · Realtime</span>
+          <h1 class="case-study__title">Stock Broker<br>Dashboard</h1>
+        </div>
+        <div class="case-study__meta">
+          <div class="case-study__meta-item"><span class="case-study__meta-label">Role</span><span class="case-study__meta-value">Solo Engineer</span></div>
+          <div class="case-study__meta-item"><span class="case-study__meta-label">Year</span><span class="case-study__meta-value">2026</span></div>
+          <div class="case-study__meta-item"><span class="case-study__meta-label">Stack</span><span class="case-study__meta-value">TypeScript · React · WebSockets</span></div>
+        </div>
+      </div>
+      <div class="case-study__visual visual-stock reveal-up">
+        <div class="visual-grid-overlay"></div>
+        <div style="text-align:center;z-index:1;position:relative"><div style="font-size:5rem;margin-bottom:1rem">📈</div>
+        <div style="font-family:var(--font-mono);font-size:var(--fs-sm);color:rgba(255,255,255,0.5)">WebSocket Feed → TypeScript State → React UI → Live Charts</div></div>
+      </div>
+    </div></div>
+
+    <div class="container"><div class="case-study__body">
+      <aside class="case-study__toc"><div class="case-study__toc-title">On this page</div>
+        <ul class="case-study__toc-list" role="list">
+          <li><a href="#context" class="case-study__toc-link">Context</a></li>
+          <li><a href="#problem" class="case-study__toc-link">Problem</a></li>
+          <li><a href="#architecture" class="case-study__toc-link">Architecture</a></li>
+          <li><a href="#decisions" class="case-study__toc-link">Key Decisions</a></li>
+          <li><a href="#stack" class="case-study__toc-link">Stack</a></li>
+          <li><a href="#results" class="case-study__toc-link">Results</a></li>
+          <li><a href="#next" class="case-study__toc-link">Next Steps</a></li>
+        </ul>
+      </aside>
+
+      <div class="case-study__content">
+        <section class="case-study__section reveal-up" id="context">
+          <span class="case-study__section-label">01 — Context</span>
+          <h2>Realtime Data Is a Different Problem</h2>
+          <p>Most web development works with request-response cycles — user asks, server responds. Realtime stock dashboards are fundamentally different: the server pushes updates continuously, and the UI must reflect sub-second changes without re-rendering the entire component tree.</p>
+          <p>This project is a TypeScript-first broker client dashboard — demonstrating type-safe realtime data flows, WebSocket subscription management, and performant React rendering under continuous data updates.</p>
+        </section>
+
+        <section class="case-study__section reveal-up" id="problem">
+          <span class="case-study__section-label">02 — Problem</span>
+          <h2>Realtime UI Challenges</h2>
+          <ul>
+            <li>WebSocket message handling is inherently untyped — without strict interfaces, data shape bugs are silent</li>
+            <li>Frequent state updates can cause React to re-render more than necessary, degrading performance</li>
+            <li>WebSocket connections need lifecycle management — reconnection, heartbeat, cleanup on unmount</li>
+            <li>Financial data display requires careful formatting — prices, percentages, deltas — and visual diff-highlighting</li>
+          </ul>
+        </section>
+
+        <section class="case-study__section reveal-up" id="architecture">
+          <span class="case-study__section-label">03 — Architecture</span>
+          <h2>Data Flow Architecture</h2>
+          <div class="arch-diagram">WebSocket Server (mock / real feed)
+    │  (binary / JSON messages)
+    ▼
+WebSocket Client (TypeScript)
+    ├── Type-safe message parsing (discriminated unions)
+    ├── Reconnection logic with exponential backoff
+    └── Custom useWebSocket hook
+    │
+    ▼
+React State Layer
+    ├── Zustand store for ticker data
+    ├── Selector-based subscriptions (minimal re-renders)
+    └── Memoized price formatting utilities
+    │
+    ▼
+Dashboard UI Components
+    ├── Live ticker strip (scrolling)
+    ├── Portfolio summary cards
+    ├── Price change indicators (delta highlighting)
+    └── Chart components (line, candlestick)</div>
+        </section>
+
+        <section class="case-study__section reveal-up" id="decisions">
+          <span class="case-study__section-label">04 — Key Decisions</span>
+          <h2>Engineering Choices</h2>
+          <ul>
+            <li><strong>TypeScript with discriminated unions for message types:</strong> Ensures every message variant is handled explicitly — prevents silent runtime failures on malformed data</li>
+            <li><strong>Custom useWebSocket hook:</strong> Encapsulates connection lifecycle (open, message, close, reconnect) as a reusable React abstraction</li>
+            <li><strong>Selector-based state subscriptions:</strong> Components subscribe only to the slice of state they use — prevents cascading re-renders on every price tick</li>
+            <li><strong>CSS delta highlighting:</strong> Price changes trigger CSS class transitions (green/red flash) without DOM mutations — pure CSS animation performance</li>
+          </ul>
+        </section>
+
+        <section class="case-study__section reveal-up" id="stack">
+          <span class="case-study__section-label">05 — Stack</span>
+          <h2>Technologies Used</h2>
+          <div class="tech-stack-grid">
+            <span class="skill-tag skill-tag--highlight">TypeScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">WebSockets</span>
+            <span class="skill-tag">Custom Hooks</span>
+            <span class="skill-tag">CSS Animations</span>
+            <span class="skill-tag">Realtime State Management</span>
+          </div>
+        </section>
+
+        <section class="case-study__section reveal-up" id="results">
+          <span class="case-study__section-label">06 — Results</span>
+          <h2>What Was Built</h2>
+          <ul>
+            <li>Type-safe WebSocket client with discriminated union message parsing</li>
+            <li>Custom useWebSocket hook with reconnection and heartbeat management</li>
+            <li>Portfolio dashboard with live price updates, delta indicators, and portfolio summary</li>
+            <li>Ticker strip with scrolling live quotes</li>
+            <li>Performance-optimized rendering — minimal re-renders under continuous update load</li>
+          </ul>
+        </section>
+
+        <section class="case-study__section reveal-up" id="next">
+          <span class="case-study__section-label">07 — Next Steps</span>
+          <h2>Planned Improvements</h2>
+          <ul>
+            <li>Add candlestick chart with configurable time intervals</li>
+            <li>Integrate real market data feed via public WebSocket API</li>
+            <li>Add order entry simulation (paper trading)</li>
+          </ul>
+          <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="https://github.com/Akshat0359/stock-broker-dashboard" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub ↗</a>
+            <a href="projects.html" class="btn btn--ghost">← Back to Projects</a>
+          </div>
+        </section>
+      </div>
+    </div></div>
+  </main>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer__inner">
+    <div class="footer__left"><span class="footer__name">Akshat</span><span class="footer__tagline">AI/ML Engineer · RVCE '26 · Bengaluru</span></div>
+    <div class="footer__links"><a href="https://github.com/Akshat0359" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/akshat-prabhakar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:akshat.prabhakar5903@gmail.com">Email</a></div>
+    <div class="footer__copy">© 2026 Akshat</div>
+  </div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

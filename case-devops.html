@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud-Native DevOps Platform — Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" /><link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <nav class="nav" id="nav"><div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span class="nav__logo-mark">A</span></a>
+    <ul class="nav__links" role="list"><li><a href="projects.html" class="nav__link">Work</a></li><li><a href="about.html" class="nav__link">About</a></li><li><a href="resume.html" class="nav__link">Resume</a></li><li><a href="contact.html" class="nav__link">Contact</a></li></ul>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu" aria-hidden="true"><ul role="list"><li><a href="projects.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </nav>
+
+  <main class="case-study">
+    <div class="case-study__hero"><div class="container">
+      <a href="projects.html" class="case-study__back">← All Projects</a>
+      <div class="case-study__header reveal-up">
+        <div>
+          <span class="bento__tag bento__tag--devops" style="margin-bottom:1rem;display:inline-flex">DevOps · Cloud-Native</span>
+          <h1 class="case-study__title">Cloud-Native DevOps<br>Automation Platform</h1>
+        </div>
+        <div class="case-study__meta">
+          <div class="case-study__meta-item"><span class="case-study__meta-label">Role</span><span class="case-study__meta-value">Solo Engineer</span></div>
+          <div class="case-study__meta-item"><span class="case-study__meta-label">Year</span><span class="case-study__meta-value">2026</span></div>
+          <div class="case-study__meta-item"><span class="case-study__meta-label">Stack</span><span class="case-study__meta-value">Python · Docker · CI/CD · Shell · Cloud-native</span></div>
+        </div>
+      </div>
+      <div class="case-study__visual visual-devops reveal-up">
+        <div class="visual-grid-overlay"></div>
+        <div style="text-align:center;z-index:1;position:relative"><div style="font-size:5rem;margin-bottom:1rem">⚙️</div>
+        <div style="font-family:var(--font-mono);font-size:var(--fs-sm);color:rgba(255,255,255,0.5)">Build → Test → Deploy → Monitor → Alert</div></div>
+      </div>
+    </div></div>
+
+    <div class="container"><div class="case-study__body">
+      <aside class="case-study__toc"><div class="case-study__toc-title">On this page</div>
+        <ul class="case-study__toc-list" role="list">
+          <li><a href="#context" class="case-study__toc-link">Context</a></li>
+          <li><a href="#problem" class="case-study__toc-link">Problem</a></li>
+          <li><a href="#architecture" class="case-study__toc-link">Architecture</a></li>
+          <li><a href="#decisions" class="case-study__toc-link">Key Decisions</a></li>
+          <li><a href="#stack" class="case-study__toc-link">Stack</a></li>
+          <li><a href="#results" class="case-study__toc-link">Results</a></li>
+          <li><a href="#next" class="case-study__toc-link">Next Steps</a></li>
+        </ul>
+      </aside>
+
+      <div class="case-study__content">
+        <section class="case-study__section reveal-up" id="context">
+          <span class="case-study__section-label">01 — Context</span>
+          <h2>Automating Deployment Pipelines</h2>
+          <p>DevOps automation is the connective tissue between development and production. This project builds a cloud-native automation platform designed around idempotent deployments, environment parity, and integrated monitoring — targeting Python-based services deployed via Docker.</p>
+          <p>The goal was to implement the full CI/CD lifecycle as a configurable, repeatable system rather than one-off scripts.</p>
+        </section>
+
+        <section class="case-study__section reveal-up" id="problem">
+          <span class="case-study__section-label">02 — Problem</span>
+          <h2>Common DevOps Pain Points</h2>
+          <ul>
+            <li>Deployment scripts that work locally but break in CI — environment parity failures</li>
+            <li>Manual, error-prone deployments with no rollback capability</li>
+            <li>Monitoring bolted on after the fact rather than designed in</li>
+            <li>Configuration drift between dev, staging, and prod environments</li>
+          </ul>
+        </section>
+
+        <section class="case-study__section reveal-up" id="architecture">
+          <span class="case-study__section-label">03 — Architecture</span>
+          <h2>Platform Structure</h2>
+          <div class="arch-diagram">Source Code Push
+    │
+    ▼
+CI Pipeline (GitHub Actions)
+    ├── Lint + Type Check
+    ├── Unit Tests
+    ├── Integration Tests (Docker Compose)
+    └── Build Docker Image
+    │
+    ▼
+Deployment Orchestrator (Python)
+    ├── Environment config injection
+    ├── Blue-green deploy logic
+    └── Health check validation
+    │
+    ▼
+Monitoring Layer
+    ├── Health endpoint polling
+    ├── Log aggregation
+    └── Alert on threshold breach</div>
+        </section>
+
+        <section class="case-study__section reveal-up" id="decisions">
+          <span class="case-study__section-label">04 — Key Decisions</span>
+          <h2>Design Principles</h2>
+          <ul>
+            <li><strong>Idempotency first:</strong> Every deployment step can be re-run without side effects — critical for reliable automation</li>
+            <li><strong>Config as code:</strong> All environment-specific config is version-controlled, not set manually in target environments</li>
+            <li><strong>Docker for environment parity:</strong> The same image runs in CI, staging, and production — eliminates "works on my machine" failures</li>
+            <li><strong>Python for the orchestrator:</strong> Preferred over Bash for its error handling, testability, and library ecosystem</li>
+          </ul>
+        </section>
+
+        <section class="case-study__section reveal-up" id="stack">
+          <span class="case-study__section-label">05 — Stack</span>
+          <h2>Technologies Used</h2>
+          <div class="tech-stack-grid">
+            <span class="skill-tag">Python</span><span class="skill-tag">Docker</span>
+            <span class="skill-tag">GitHub Actions</span><span class="skill-tag">Shell / Bash</span>
+            <span class="skill-tag">YAML config</span><span class="skill-tag">Health checks</span>
+          </div>
+        </section>
+
+        <section class="case-study__section reveal-up" id="results">
+          <span class="case-study__section-label">06 — Results</span>
+          <h2>What Was Built</h2>
+          <ul>
+            <li>Automated CI/CD pipeline using GitHub Actions with lint, test, build, and deploy stages</li>
+            <li>Python orchestrator for deployment lifecycle with idempotent operations</li>
+            <li>Docker-based environment parity across dev, CI, and production</li>
+            <li>Health check and monitoring layer with threshold-based alerting</li>
+          </ul>
+        </section>
+
+        <section class="case-study__section reveal-up" id="next">
+          <span class="case-study__section-label">07 — Next Steps</span>
+          <h2>Planned Work</h2>
+          <ul>
+            <li>Add Kubernetes deployment target alongside Docker Compose</li>
+            <li>Implement metrics collection with Prometheus + Grafana</li>
+            <li>Add rollback automation triggered by failed health checks</li>
+          </ul>
+          <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="https://github.com/Akshat0359/cloud-native-devops-automation-platform" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub ↗</a>
+            <a href="projects.html" class="btn btn--ghost">← Back to Projects</a>
+          </div>
+        </section>
+      </div>
+    </div></div>
+  </main>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer__inner">
+    <div class="footer__left"><span class="footer__name">Akshat</span><span class="footer__tagline">AI/ML Engineer · RVCE '26 · Bengaluru</span></div>
+    <div class="footer__links"><a href="https://github.com/Akshat0359" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/akshat-prabhakar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:akshat.prabhakar5903@gmail.com">Email</a></div>
+    <div class="footer__copy">© 2026 Akshat</div>
+  </div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Akshat</title>
+  <meta name="description" content="Akshat's engineering projects — AI agents, distributed ML, real-time dashboards, network security, and production backends." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Home">
+        <span class="nav__logo-mark">A</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="projects.html" class="nav__link">Work</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="resume.html" class="nav__link">Resume</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="projects.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero reveal-up" aria-labelledby="projects-heading">
+      <div class="container">
+        <span class="page-hero__tag">Selected Work</span>
+        <h1 id="projects-heading">Engineering Projects</h1>
+        <p>Six case studies spanning agentic AI, distributed systems, ML pipelines, and production software.</p>
+      </div>
+    </section>
+
+    <section class="projects-grid" aria-label="Project case studies">
+      <div class="container">
+        <div class="projects-grid__inner">
+
+          <!-- 1. AI Research Analyst MCP-A2A -->
+          <article class="project-card reveal-up" id="ai-research-analyst" data-href="case-ai-research.html">
+            <div class="project-card__visual">
+              <div class="project-card__visual-inner visual-ai">
+                <div class="visual-grid-overlay"></div>
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" style="width:48px;height:48px;color:var(--c-accent);z-index:2">
+                  <circle cx="50" cy="50" r="12"/><circle cx="20" cy="20" r="8"/><circle cx="80" cy="20" r="8"/><circle cx="20" cy="80" r="8"/><circle cx="80" cy="80" r="8"/>
+                  <line x1="26" y1="26" x2="41" y2="41"/><line x1="74" y1="26" x2="59" y2="41"/><line x1="26" y1="74" x2="41" y2="59"/><line x1="74" y1="74" x2="59" y2="59"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="bento__tag bento__tag--ai">Multi-Agent AI</span>
+                <span style="font-size:var(--fs-xs);color:var(--c-text-3);font-family:var(--font-mono)">2026</span>
+              </div>
+              <h2 class="project-card__title">AI Research Analyst MCP-A2A</h2>
+              <p class="project-card__desc">Multi-agent system with MCP memory, A2A orchestration, modular agent workflows, and a React UI. Agents autonomously plan, retrieve, and synthesize research across structured and unstructured sources.</p>
+              <div class="project-card__stack">
+                <span class="skill-tag skill-tag--highlight">Python</span>
+                <span class="skill-tag skill-tag--highlight">LangGraph</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">MCP</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Docker</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="case-ai-research.html" class="project-card__link" id="proj-ai-research">Full Case Study →</a>
+                <a href="https://github.com/Akshat0359/ai-research-analyst-mcp-a2a" target="_blank" rel="noopener" class="project-card__github" id="proj-ai-research-gh">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Lending Platform -->
+          <article class="project-card reveal-up" id="lending-platform" data-href="case-lending.html">
+            <div class="project-card__visual">
+              <div class="project-card__visual-inner visual-lend">
+                <div class="visual-grid-overlay"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px;color:var(--c-accent);z-index:2">
+                  <rect x="2" y="9" width="4" height="6" rx="1"/>
+                  <rect x="10" y="9" width="4" height="6" rx="1"/>
+                  <rect x="18" y="5" width="4" height="6" rx="1"/>
+                  <rect x="18" y="13" width="4" height="6" rx="1"/>
+                  <line x1="6" y1="12" x2="10" y2="12"/>
+                  <polyline points="14 12 16 12 16 8 18 8"/>
+                  <polyline points="14 12 16 12 16 16 18 16"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="bento__tag bento__tag--backend">C# · .NET · Backend</span>
+                <span style="font-size:var(--fs-xs);color:var(--c-text-3);font-family:var(--font-mono)">2026</span>
+              </div>
+              <h2 class="project-card__title">AI-Based Digital Lending Platform</h2>
+              <p class="project-card__desc">Enterprise lending platform featuring an automated application pipeline with discrete risk and eligibility evaluation stages. Built with a C# API-first architecture, enabling seamless credit decisioning and approval routing.</p>
+              <div class="project-card__stack">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">ASP.NET</span>
+                <span class="skill-tag">Entity Framework</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Docker</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="case-lending.html" class="project-card__link" id="proj-lending">Full Case Study →</a>
+                <a href="https://github.com/Akshat0359/ai-based-digital-lending-platform-" target="_blank" rel="noopener" class="project-card__github" id="proj-lending-gh">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Anomaly Detector -->
+          <article class="project-card reveal-up" id="anomaly-detector" data-href="case-anomaly.html">
+            <div class="project-card__visual">
+              <div class="project-card__visual-inner visual-anom">
+                <div class="visual-grid-overlay"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px;color:#f43f5e;z-index:2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <circle cx="12" cy="11" r="3" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="bento__tag bento__tag--ml">ML · Security</span>
+                <span style="font-size:var(--fs-xs);color:var(--c-text-3);font-family:var(--font-mono)">2026</span>
+              </div>
+              <h2 class="project-card__title">Network Anomaly Detector</h2>
+              <p class="project-card__desc">Real-time network anomaly detection using Zeek for deep traffic analysis and ML classification to identify threats. Interactive Streamlit dashboard for monitoring and investigation.</p>
+              <div class="project-card__stack">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Zeek</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">Streamlit</span>
+                <span class="skill-tag">ML</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="case-anomaly.html" class="project-card__link" id="proj-anomaly">Full Case Study →</a>
+                <a href="https://github.com/Akshat0359/anomaly-detector" target="_blank" rel="noopener" class="project-card__github" id="proj-anomaly-gh">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Cloud DevOps Platform -->
+          <article class="project-card reveal-up" id="devops-platform" data-href="case-devops.html">
+            <div class="project-card__visual">
+              <div class="project-card__visual-inner visual-dev">
+                <div class="visual-grid-overlay"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:48px;height:48px;color:var(--c-accent);z-index:2">
+                  <rect x="2" y="8" width="5" height="8" rx="1"/>
+                  <rect x="10" y="8" width="5" height="8" rx="1"/>
+                  <polygon points="18 8 18 16 23 12" stroke-linejoin="round"/>
+                  <line x1="7" y1="12" x2="10" y2="12"/>
+                  <line x1="15" y1="12" x2="18" y2="12"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="bento__tag bento__tag--devops">DevOps · Cloud</span>
+                <span style="font-size:var(--fs-xs);color:var(--c-text-3);font-family:var(--font-mono)">2026</span>
+              </div>
+              <h2 class="project-card__title">Cloud-Native DevOps Automation Platform</h2>
+              <p class="project-card__desc">Automated cloud-native deployment pipeline integrating build, test, and release stages. Designed with infrastructure-as-code principles for idempotent deployments and consistent environment orchestration.</p>
+              <div class="project-card__stack">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Shell</span>
+                <span class="skill-tag">Cloud-native</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="case-devops.html" class="project-card__link" id="proj-devops">Full Case Study →</a>
+                <a href="https://github.com/Akshat0359/cloud-native-devops-automation-platform" target="_blank" rel="noopener" class="project-card__github" id="proj-devops-gh">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <span class="footer__name">Akshat</span>
+          <span class="footer__tagline">AI/ML Engineer · RVCE '26 · Bengaluru</span>
+        </div>
+        <div class="footer__links">
+          <a href="https://github.com/Akshat0359" target="_blank" rel="noopener" id="footer-github">GitHub</a>
+          <a href="https://www.linkedin.com/in/akshat-prabhakar/" target="_blank" rel="noopener" id="footer-linkedin">LinkedIn</a>
+          <a href="mailto:akshat.prabhakar5903@gmail.com" id="footer-email">Email</a>
+        </div>
+        <div class="footer__copy">© 2026 Akshat</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
